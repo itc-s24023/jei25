@@ -1,5 +1,3 @@
-package src;
-
 public class D51Q17kadai {
     public static void main(String[] args) {
         int x = 4;
@@ -14,3 +12,4 @@ public class D51Q17kadai {
         }
     }
 }
+
