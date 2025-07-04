@@ -6,7 +6,7 @@ public class D51Q26kadai {
         switch (n) {
             case 1:
                 s += "one";
-                break; // ← ここを追加
+                break; 
             case 2:
                 s += "two";
                 break;
