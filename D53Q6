@@ -1,0 +1,52 @@
+public class D53Q6 {
+    public static void main(String[] args) {
+        if (args.length != 4) {
+            System.out.println("エラー: 4つの引数を指定してください。");
+            return;
+        }
+
+        for (String arg : args) {
+            try {
+                // 16進数 -> 2進数 (4ビット) 変換
+                int hex = Integer.parseInt(arg, 16);
+                String binary = String.format("%4s", Integer.toBinaryString(hex)).replace(' ', '0');
+
+                // ビット列を o と . に変換して表示
+                for (char bit : binary.toCharArray()) {
+                    System.out.print(bit == '1' ? 'o' : '.');
+                }
+                System.out.println(); // 改行
+            } catch (NumberFormatException e) {
+                System.out.println("エラー: 無効な16進数です - " + arg);
+                return;
+            }
+        }
+    }
+}
+
+
+javac D53Q6.java
+
+java D53Q6 [1] F 1 F 1
+oooo
+o...
+oooo
+o...
+
+java D53Q6 [2] 6 9 F 9
+        .oo.
+        o..o
+        oooo
+o..o
+
+java D53Q6 [3] E 9 4 F
+        .ooo
+o..o
+o...
+oooo
+
+java D53Q6 [4] 3 5 9 1
+        ..oo
+        .o.o
+o..o
+...o
